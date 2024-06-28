@@ -30,6 +30,13 @@ def main():
             print("API key not found. Please set it using --setkey.")
             sys.exit(1)
         response = ask_ai(prompt_query, api_key, model)
+
+        try:
+            response = ask_ai(prompt_query, api_key, model)
+            print(response)
+        except Exception as e:
+            print(f"An error occurred while contacting OpenAI API: {str(e)}")
+            sys.exit(1)
     else:
         parser.print_help()
 
