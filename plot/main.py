@@ -29,8 +29,6 @@ def main():
         if not api_key:
             print("API key not found. Please set it using --setkey.")
             sys.exit(1)
-        response = ask_ai(prompt_query, api_key, model)
-
         try:
             response = ask_ai(prompt_query, api_key, model)
             print(response)
